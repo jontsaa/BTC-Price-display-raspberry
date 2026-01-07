@@ -1,2 +1,13 @@
-# BTC-Price-display-raspberry
-This project uses a Raspberry Pi to fetch and display the current Bitcoin price in real-time. It leverages the yfinance library to get live cryptocurrency data and matplotlib for visualization. The display updates automatically, allowing you to monitor Bitcoin’s price trends directly from your Raspberry Pi.
+Raspberry Pi BTC OLED Display
+
+This project displays the Bitcoin (BTC) price in Euros on a 2.42" IIC color OLED display using a Raspberry Pi.
+
+- Fetches the BTC price from Yahoo Finance
+- Updates every 30 seconds
+- Shows the price in the center of the OLED with 2 decimal precision
+- Header at the top: "BITCOIN PRICE (EUR)"
+
+- Raspberry Pi (Zero 2W, 3, 4, etc.)
+- 2.42" IIC VER:1.1 color OLED display
+
+
