@@ -13,14 +13,10 @@ device = ssd1306(serial, rotate=0)
 API_URL = "https://query1.finance.yahoo.com/v7/finance/quote?symbols=BTC-EUR"
 
 def fetch_btc_price():
-    try:
-        response = requests.get(API_URL, timeout=5)
-        data = response.json()
-        price = data['quoteResponse']['result'][0]['regularMarketPrice']
-        return price
-    except Exception as e:
-        print("API fetch error:", e)
-        return None
+    response = requests.get(API_URL, timeout=5)
+    data = response.json()
+    price = data['quoteResponse']['result'][0]['regularMarketPrice']
+    return price
 
 def display_price(price):
     with canvas(device) as draw:
