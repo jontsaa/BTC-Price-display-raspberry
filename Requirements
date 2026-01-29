@@ -1,4 +1,4 @@
 luma.oled
+luma.core
 Pillow
-requests
-time
+yfinance
