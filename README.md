@@ -1,13 +1,30 @@
-Raspberry Pi BTC OLED Display
+# Bitcoin Price Ticker (SSD1306 OLED)
 
-This project displays the Bitcoin (BTC) price in Euros on a 2.42" IIC color OLED display using a Raspberry Pi.
+This Python project displays the real-time Bitcoin price (BTC to EUR) and the value of a specific crypto portfolio on an SSD1306 OLED display. It is designed to run on a Raspberry Pi (or similar Linux SBC) using the I2C interface.
 
-- Fetches the BTC price from Yahoo Finance
-- Updates every 30 seconds
-- Shows the price in the center of the OLED with 2 decimal precision
-- Header at the top: "BITCOIN PRICE (EUR)"
+## Features
+- **Real-time Data:** Fetches live market data using the `yfinance` library.
+- **Portfolio Tracker:** Automatically calculates the Euro value of your specific BTC holdings.
+- **Dynamic Centering:** Text is programmatically centered on the display regardless of string length.
+- **Hardware Support:** Built on the `luma.oled` library for SSD1306 displays.
 
-- Raspberry Pi (Zero 2W, 3, 4, etc.)
-- 2.42" IIC VER:1.1 color OLED display
+## Hardware Requirements
+- Raspberry Pi (any model with GPIO)
+- SSD1306 OLED Display (128x64 or 128x32, I2C interface)
+- Jumper wires
 
+### Wiring (Default I2C)
+- **VCC** -> 3.3V
+- **GND** -> Ground
+- **SDA** -> GPIO 2 (SDA)
+- **SCL** -> GPIO 3 (SCL)
 
+## Installation
+
+1. **Enable I2C** on your Raspberry Pi:
+   Run `sudo raspi-config` -> Interface Options -> I2C -> Enable.
+
+2. **Install System Dependencies** (Required for Pillow/Luma):
+   ```bash
+   sudo apt-get update
+   sudo apt-get install python3-dev libfreetype6-dev libjpeg-dev build-essential
